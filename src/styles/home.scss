@@ -1,0 +1,110 @@
+.home{
+    padding: 2rem 5%;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    width: 100%;
+    > section {
+        width: 100%;
+        height: 18.75rem;
+        margin: auto;
+        background-color: $color2;
+        animation: sectionAnimation 500ms 1 ease-in-out;
+        background-image: url('../assets/images/banner.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+    >h1{
+        @include heading(1px);
+        margin-top: 3rem;
+        @include flex(raw,space-between,center)
+    }
+    .findmore{font-size: 1rem;}
+    >main{
+       
+        width: 100%;
+        display: flex;
+        flex: 1;
+        gap: 1rem;
+
+        padding: 1rem 0;
+        overflow-x: auto;
+        // &::-webkit-scrollbar{
+        //     display: none;
+        // }
+    }
+
+    @keyframes sectionAnimation {
+        0% {
+            // transform: translateY(0);
+            transform: scale(0);
+            background-color: transparent;
+        }
+        50% {
+            transform: translateY(0.5); // floating up
+            // background-color: $color2;
+            background-color: transparent;
+
+        }
+        100% {
+            transform: translateY(1);
+            // background-color: $color3;
+        }
+    }
+
+
+}
+
+
+
+.product-card {
+    width: 18.75rem;
+    height: 25rem;
+    padding: 1rem;
+    flex: none;
+    @include flex(column, flex-start, center, 4px);
+    position: relative;
+    // background-color: white;
+  
+    &:hover > div {
+      opacity: 1;
+    }
+  
+    img {
+      @include square(calc(18.75rem - 3rem));
+      object-fit: cover;
+      margin: 1rem;
+    }
+  
+    span {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  
+    > div {
+      opacity: 0;
+      position: absolute;
+      @include square(100%);
+      top: 0;
+      left: 0;
+     
+      background-color: #00000030;
+      @include flex;
+      button {
+        @include flex;
+        @include square(3rem);
+        border-radius: 100%;
+        border: none;
+        background-color: $color3;
+        cursor: pointer;
+        color: $color1;
+        font-size: 1.1rem;
+        transition: all 300ms;
+        &:hover {
+          rotate: 90deg;
+          background-color: rgba(0, 195, 0,0.8);
+        }
+      }
+    }
+  }
