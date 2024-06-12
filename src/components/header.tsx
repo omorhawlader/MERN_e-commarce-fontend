@@ -9,7 +9,7 @@ import {
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const user = { _data: "", role: "" };
+  const user = { _data: "dfsa", role: "" };
   const [isOpen, setIsOpen] = useState<boolean>(false);
   function logouthandler() {
     setIsOpen(false);
